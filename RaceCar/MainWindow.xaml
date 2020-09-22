@@ -1,0 +1,118 @@
+﻿<Window x:Class="RaceCar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        WindowState="Normal"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        Title="Car Race"
+        Icon="Images/favicon.ico">
+
+    <Canvas
+        x:Name="MyCanvas"
+        Background="Gray"
+        Height="500"
+        Width="450">
+
+        <StackPanel Orientation="Horizontal" Margin="30 15 0 0">
+            <TextBlock
+                Text="Gold Coins :"
+                Foreground="Gold"
+                FontSize="15"
+                FontWeight="Bold"
+                FontStyle="Oblique" />
+
+            <TextBlock
+                x:Name="GoldCounter"
+                Text="0"
+                FontSize="15"
+                FontWeight="Bold"
+                Foreground="Gold"
+                FontStyle="Oblique"
+                Margin="10 0 0 0" />
+        </StackPanel>
+
+        <!--#region Buttons -->
+        <StackPanel Orientation="Vertical" Margin="10 35 0 0 ">
+
+            <Button x:Name="GameRules"
+                    Style="{StaticResource MyButton}"
+                    Content="Rule"
+                    Background="Orange"
+                    Click="GameRules_Click" />
+
+            <Button x:Name="StartGame"
+                    Content="Start"
+                    Style="{StaticResource MyButton}"
+                    Background="Green"
+                    Click="StartGame_Click" />
+        </StackPanel>
+        <!--#endregion-->
+
+        <!--#region LineSegment -->
+        <StackPanel x:Name="LittelRectangles">
+            <Rectangle Style="{StaticResource LineSegment}" />
+            <Rectangle Style="{StaticResource LineSegment}" Margin=" 225 65" />
+            <Rectangle Style="{StaticResource LineSegment}" />
+        </StackPanel>
+        <!--#endregion-->
+
+        <!--#region Margin Of The Road -->
+        <Rectangle Style="{StaticResource RoadsMargin}" Canvas.Left="10" />
+        <Rectangle Style="{StaticResource RoadsMargin}" Canvas.Left="413" />
+        <!--#endregion-->
+
+        <!--#region Images Of Cars -->
+        <StackPanel
+            x:Name="ImagesOfCars"
+            Orientation="Horizontal"
+            Canvas.Left="60"
+            Canvas.Top="320">
+
+            <Image
+                x:Name="MyBlueCar"
+                Style="{StaticResource MyImage}"
+                Source="Images/Car/Blue.png" />
+            <Image
+                x:Name="MyGreenCar"
+                Source="Images/Car/Green.png"
+                Style="{StaticResource MyImage}" />
+            <Image
+                x:Name="MyRedCar"
+                Source="Images/Car/RedCar.png"
+                Style="{StaticResource MyImage}" />
+        </StackPanel>
+        <!--#endregion-->
+
+        <!--#region Car Option Radio -->
+        <StackPanel
+            x:Name="CarOption"
+            Orientation="Horizontal"
+            Canvas.Left="35"
+            Canvas.Top="290">
+
+            <RadioButton
+                Content="B Car"
+                Foreground="Turquoise"
+                Click="WhichCar_Click"
+                Style="{StaticResource MyRadioButtonText}" />
+
+            <RadioButton
+                Content="G Car"
+                Foreground="GreenYellow"
+                Click="WhichCar_Click"
+                Style="{StaticResource MyRadioButtonText}" />
+
+            <RadioButton
+                x:Name="WhichCar"
+                Content="R Car"
+                Foreground="Red"
+                Click="WhichCar_Click"
+                Style="{StaticResource MyRadioButtonText}" />
+        </StackPanel>
+        <!--#endregion-->
+    </Canvas>
+</Window>
