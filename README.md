@@ -1,4 +1,4 @@
-# Race-car -WPF
+# A car game - WPF
 This project is a car game and the goals are:
 a. Earn coins 
 b. Dodge police cars.
